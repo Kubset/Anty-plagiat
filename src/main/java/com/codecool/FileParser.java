@@ -33,4 +33,5 @@ public class FileParser {
         return Arrays.stream(fileToString.split("\\.\n?"))
                 .collect(Collectors.toList());
     }
+
 }
