@@ -20,4 +20,17 @@ public class FileParser {
         return fileToString;
     }
 
+    public List<String> parse(String path) {
+
+        String fileToString = "";
+        try {
+            fileToString = convert(path);
+        }
+        catch (IOException e) {
+            System.out.println("There is no such file");
+        }
+
+        return Arrays.stream(fileToString.split("\\.\n?"))
+                .collect(Collectors.toList());
+    }
 }
